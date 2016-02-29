@@ -18,7 +18,7 @@ let decimalInt:Int = 17
 let binaryInt:Int = 0b10001//二进制
 let octalInt:Int = 0o21//八进制
 let hexadecinalnt:Int = 0x11//十六进制
-
+//NSString *str
 let float_a = 0.012
 let float_b = 1.2
 
@@ -675,9 +675,42 @@ stackOfStrings.push("cuatro")
 func someFiunction<T:UIView>(view:T){
     
 }
+//where语句
 
+/*要想对类型形参及其关联类型指定额外要求，可以在泛型形参列表之后添加where子句。where子句由关键字where及其后的用逗号分割的多个要求组成。
+
+where子句中的要求用于指明该类型形参继承自某个类或遵守某个协议或协议的一部分。尽管where子句有助于表达类型形参上的简单约束(如T: Comparable等同于T where T: Comparable，等等)，但是依然可以用来对类型形参及其关联约束提供更复杂的约束。如，<T where T: C, T: P>表示泛型类型T继承自类C且遵守协议P。
+func simpleMin<T where T:Comparable,T:NSObject>(x: T, y: T) -> T {
+if x < y {
+return y
+}
+return x
+}
+
+如上所述，可以强制约束类型形参的关联类型遵守某个协议。<T: Generator where T.Element: Equatable>表示T遵守Generator协议，而且T的关联类型T.Element遵守Eauatable协议(T有关联类型是因为Generator声明了Element，而T遵守Generator协议)。
+
+也可以用操作符==来指定两个类型等效的要求。例如，有这样一个约束：T和U遵守Generator协议，同时要求它们的关联类型等同，可以这样来表达：<T: Generator, U: Generator where T.Element == U.Element>。
+
+当然，替代类型形参的类型实参必须满足所有类型形参所要求的约束和要求。
+
+泛型函数或构造器可以重载，但在泛型形参子句中的类型形参必须有不同的约束或要求，抑或二者皆不同。当调用重载的泛型函数或构造器时，编译器会用这些约束来决定调用哪个重载函数或构造器。
+
+泛型类可以生成一个子类，但是这个子类也必须是泛型类。*/
 
 //Objective-C 和 Swift 在底层使用的是两套完全不同的机制，Cocoa 中的 Objective-C 对象是基于运行时的，它从骨子里遵循了 KVC (Key-Value Coding，通过类似字典的方式存储对象信息) 以及动态派发 (Dynamic Dispatch，在运行调用时再决定实际调用的具体实现)。而 Swift 为了追求性能，如果没有特殊需要的话，是不会在运行时再来决定这些的。也就是说，Swift 类型的成员或者方法在编译时就已经决定，而运行时便不再需要经过一次查找，而可以直接使用(静态派发)。
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
